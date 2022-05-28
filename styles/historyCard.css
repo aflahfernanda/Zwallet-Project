@@ -1,0 +1,216 @@
+.historyCard {
+  border: solid gainsboro 1px;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 10px;
+}
+.historyCard__flex {
+  display: flex;
+}
+.historyCard__flex1 {
+  flex: 1;
+}
+.historyCard__flex2 {
+  flex: 10;
+}
+.historyCard__flex3 {
+  flex: 1;
+}
+.historyCard__profilePicture {
+  width: 70px;
+
+  display: inline;
+}
+.historyCard__profileName {
+  display: inline;
+  font-weight: bold;
+  font-size: 20px;
+}
+.historyCard__status {
+  color: green;
+  font-size: 15px;
+  font-weight: bold;
+}
+/*Transaction History------------------------------------------------------------------------------*/
+.dashboardPage__transactionHistory {
+  border: solid gainsboro 1px;
+  box-shadow: 15px 15px 15px gainsboro;
+  overflow-y: scroll;
+  height: 500px;
+  padding: 10px;
+  border-radius: 12px;
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .historyCard {
+    border: solid gainsboro 1px;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 10px;
+  }
+  .historyCard__flex {
+    display: flex;
+  }
+  .historyCard__flex1 {
+    flex: 1;
+  }
+  .historyCard__flex2 {
+    flex: 3;
+  }
+  .historyCard__flex3 {
+    flex: 1;
+  }
+  .historyCard__profilePicture {
+    width: 40px;
+
+    display: inline;
+  }
+  .historyCard__profileName {
+    display: inline;
+    font-weight: bold;
+    font-size: 13px;
+  }
+  .historyCard__status {
+    color: green;
+    font-size: 13px;
+    font-weight: bold;
+  }
+  /*Transaction History------------------------------------------------------------------------------*/
+  .dashboardPage__transactionHistory {
+    border: solid gainsboro 1px;
+    box-shadow: 15px 15px 15px gainsboro;
+    overflow-y: scroll;
+    height: 500px;
+    padding: 10px;
+    border-radius: 12px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .historyCard {
+    border: solid gainsboro 1px;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 10px;
+  }
+  .historyCard__flex {
+    display: block;
+    text-align: center;
+  }
+  .historyCard__flex1 {
+    flex: 1;
+  }
+  .historyCard__flex2 {
+    flex: 3;
+  }
+  .historyCard__flex3 {
+    flex: 1;
+  }
+  .historyCard__profilePicture {
+    width: 50px;
+
+    display: inline;
+    margin-bottom: 5px;
+  }
+  .historyCard__profileName {
+    display: inline;
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 5px;
+  }
+  .historyCard__status {
+    color: green;
+    font-size: 13px;
+    font-weight: bold;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .historyCard {
+    border: solid gainsboro 1px;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 10px;
+  }
+  .historyCard__flex {
+    display: block;
+    text-align: center;
+  }
+  .historyCard__flex1 {
+    flex: 1;
+  }
+  .historyCard__flex2 {
+    flex: 3;
+  }
+  .historyCard__flex3 {
+    flex: 1;
+  }
+  .historyCard__profilePicture {
+    width: 50px;
+
+    display: inline;
+    margin-bottom: 5px;
+  }
+  .historyCard__profileName {
+    display: inline;
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 5px;
+  }
+  .historyCard__status {
+    color: green;
+    font-size: 13px;
+    font-weight: bold;
+  }
+  /*Transaction History------------------------------------------------------------------------------*/
+  .dashboardPage__transactionHistory {
+    border: solid gainsboro 1px;
+    box-shadow: 15px 15px 15px gainsboro;
+    overflow-y: scroll;
+    height: 500px;
+    padding: 10px;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .historyCard {
+    border: solid gainsboro 1px;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 10px;
+  }
+  .historyCard__flex {
+    display: flex;
+  }
+  .historyCard__flex1 {
+    flex: 1;
+  }
+  .historyCard__flex2 {
+    flex: 3;
+  }
+  .historyCard__flex3 {
+    flex: 1;
+  }
+  .historyCard__profilePicture {
+    width: 40px;
+
+    display: inline;
+  }
+  .historyCard__profileName {
+    display: inline;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  .historyCard__status {
+    color: green;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  /*Transaction History------------------------------------------------------------------------------*/
+  .dashboardPage__transactionHistory {
+    border: solid gainsboro 1px;
+    box-shadow: 15px 15px 15px gainsboro;
+    overflow-y: scroll;
+    height: 500px;
+    padding: 10px;
+    border-radius: 12px;
+  }
+}

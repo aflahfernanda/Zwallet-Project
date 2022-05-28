@@ -1,0 +1,335 @@
+.backgroundNav {
+  border: solid gainsboro 1px;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 10px 10px 10px gainsboro;
+}
+.dashboardNav {
+  display: inline;
+  margin-bottom: 300px;
+}
+.dashboardNav:hover {
+  background-color: gainsboro;
+}
+.transfer {
+  margin-top: 40px;
+  font-size: 20px;
+}
+.transfer:hover {
+  background-color: gainsboro;
+  cursor: pointer;
+}
+.topUp {
+  margin-top: 40px;
+  font-size: 20px;
+}
+.topUp:hover {
+  background-color: gainsboro;
+  cursor: pointer;
+}
+.profileNav {
+  margin-top: 40px;
+  font-size: 20px;
+}
+.profileNav:hover {
+  background-color: gainsboro;
+  cursor: pointer;
+}
+.logOut {
+  margin-top: 90px;
+  font-size: 20px;
+}
+.logOut:hover {
+  background-color: gainsboro;
+  cursor: pointer;
+}
+.dash {
+  font-size: 20px;
+}
+.transferText {
+  font-size: 20px;
+}
+.topUpText {
+  font-size: 20px;
+}
+.profileText {
+  font-size: 20px;
+}
+.logOutText {
+  font-size: 20px;
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .backgroundNav {
+    border: solid gainsboro 1px;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 10px 10px 10px gainsboro;
+  }
+  .dashboardNav {
+    display: inline;
+    margin-bottom: 300px;
+    font-size: 15px;
+  }
+  .dashboardNav:hover {
+    background-color: gainsboro;
+  }
+  .transfer {
+    margin-top: 40px;
+    font-size: 15px;
+  }
+  .transfer:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+  }
+  .topUp {
+    margin-top: 40px;
+    font-size: 15px;
+  }
+  .topUp:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+  }
+  .profileNav {
+    margin-top: 40px;
+    font-size: 15px;
+  }
+  .profileNav:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+  }
+  .logOut {
+    margin-top: 90px;
+    font-size: 15px;
+  }
+  .logOut:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+  }
+  .dash {
+    font-size: 15px;
+  }
+  .transferText {
+    font-size: 15px;
+  }
+  .topUpText {
+    font-size: 15px;
+  }
+  .profileText {
+    font-size: 15px;
+  }
+  .logOutText {
+    font-size: 15px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .backgroundNav {
+    border: solid gainsboro 1px;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 10px 10px 10px gainsboro;
+    width: 100px;
+  }
+  .dashboardNav {
+    display: inline;
+    margin-bottom: 300px;
+    font-size: 13px;
+  }
+  .dashboardNav:hover {
+    background-color: gainsboro;
+  }
+  .transfer {
+    margin-top: 40px;
+    font-size: 13px;
+  }
+  .transfer:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+  }
+  .topUp {
+    margin-top: 40px;
+    font-size: 13px;
+  }
+  .topUp:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+  }
+  .profileNav {
+    margin-top: 40px;
+    font-size: 13px;
+  }
+  .profileNav:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+  }
+  .logOut {
+    margin-top: 90px;
+    font-size: 13px;
+  }
+  .logOut:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+  }
+  .dash {
+    font-size: 10px;
+    display: none;
+  }
+  .transferText {
+    font-size: 15px;
+    display: none;
+  }
+  .topUpText {
+    font-size: 15px;
+    display: none;
+  }
+  .profileText {
+    font-size: 15px;
+    display: none;
+  }
+  .logOutText {
+    font-size: 15px;
+    display: none;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .backgroundNav {
+    border: solid gainsboro 1px;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 10px 10px 10px gainsboro;
+    width: fit-content;
+    width: 90px;
+  }
+  .dashboardNav {
+    display: inline;
+    margin-bottom: 300px;
+    font-size: 13px;
+  }
+  .dashboardNav:hover {
+    background-color: gainsboro;
+  }
+  .transfer {
+    margin-top: 40px;
+    font-size: 13px;
+  }
+  .transfer:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+  }
+  .topUp {
+    margin-top: 40px;
+    font-size: 13px;
+  }
+  .topUp:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+  }
+  .profileNav {
+    margin-top: 40px;
+    font-size: 13px;
+  }
+  .profileNav:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+  }
+  .logOut {
+    margin-top: 90px;
+    font-size: 13px;
+  }
+  .logOut:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+  }
+  .dash {
+    font-size: 10px;
+    display: none;
+  }
+  .transferText {
+    font-size: 15px;
+    display: none;
+  }
+  .topUpText {
+    font-size: 15px;
+    display: none;
+  }
+  .profileText {
+    font-size: 15px;
+    display: none;
+  }
+  .logOutText {
+    font-size: 15px;
+    display: none;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .backgroundNav {
+    border: solid gainsboro 1px;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 10px 10px 10px gainsboro;
+    width: 70px;
+
+    object-position: center;
+  }
+  .dashboardNav {
+    display: inline;
+    margin-bottom: 300px;
+    font-size: 13px;
+  }
+  .dashboardNav:hover {
+    background-color: gainsboro;
+    object-position: center;
+  }
+  .transfer {
+    margin-top: 40px;
+    font-size: 13px;
+  }
+  .transfer:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+  }
+  .topUp {
+    margin-top: 40px;
+    font-size: 13px;
+  }
+  .topUp:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+  }
+  .profileNav {
+    margin-top: 40px;
+    font-size: 13px;
+  }
+  .profileNav:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+  }
+  .logOut {
+    margin-top: 90px;
+    font-size: 13px;
+  }
+  .logOut:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+  }
+  .dash {
+    font-size: 10px;
+    display: none;
+  }
+  .transferText {
+    font-size: 15px;
+    display: none;
+  }
+  .topUpText {
+    font-size: 15px;
+    display: none;
+  }
+  .profileText {
+    font-size: 15px;
+    display: none;
+  }
+  .logOutText {
+    font-size: 15px;
+    display: none;
+  }
+}

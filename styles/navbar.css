@@ -1,0 +1,135 @@
+.navDesign {
+  box-shadow: 15px 15px 15px gainsboro;
+  margin-bottom: 0px;
+  margin-bottom: 40px;
+}
+.profile {
+  display: inline;
+  margin-left: 10px;
+}
+.profilePhoto {
+  width: 70px;
+  display: inline;
+}
+.nameProfile {
+  font-size: 13px;
+  font-weight: bold;
+}
+.phoneNumber {
+  font-size: 11px;
+}
+.width {
+  width: 350px;
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .navDesign {
+    box-shadow: 15px 15px 15px gainsboro;
+  }
+  .profile {
+    display: inline;
+    margin-left: 0;
+  }
+  .profilePhoto {
+    width: 70px;
+    display: inline;
+  }
+  .nameProfile {
+    font-size: 11px;
+    font-weight: bold;
+  }
+  .phoneNumber {
+    font-size: 7px;
+  }
+  .width {
+    width: 320px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .navDesign {
+    box-shadow: 15px 15px 15px gainsboro;
+  }
+  .profile {
+    display: inline;
+    margin-left: 0;
+  }
+  .profilePhoto {
+    width: 60px;
+
+    display: inline;
+  }
+  .nameProfile {
+    font-size: 11px;
+    font-weight: bold;
+    display: none;
+  }
+  .phoneNumber {
+    font-size: 7px;
+    display: none;
+  }
+  .width {
+    width: 0;
+  }
+  .notification {
+    display: none;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .navDesign {
+    box-shadow: 15px 15px 15px gainsboro;
+  }
+  .profile {
+    display: inline;
+    margin-left: 0;
+  }
+  .profilePhoto {
+    width: 40px;
+
+    display: inline;
+  }
+  .nameProfile {
+    font-size: 11px;
+    font-weight: bold;
+    display: none;
+  }
+  .phoneNumber {
+    font-size: 7px;
+    display: none;
+  }
+  .notification {
+    display: none;
+  }
+  .width {
+    width: 0px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .navDesign {
+    box-shadow: 15px 15px 15px gainsboro;
+  }
+  .profile {
+    display: inline;
+    margin-left: 0;
+    display: inline;
+  }
+  .profilePhoto {
+    width: 30px;
+
+    display: inline;
+  }
+  .nameProfile {
+    font-size: 11px;
+    font-weight: bold;
+    display: none;
+  }
+  .phoneNumber {
+    font-size: 7px;
+    display: none;
+  }
+  .notification {
+    display: none;
+  }
+  .width {
+    width: 0px;
+  }
+}
