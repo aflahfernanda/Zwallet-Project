@@ -1,0 +1,234 @@
+.profile__border__change {
+  border: solid gainsboro 1px;
+  border-radius: 12px;
+  box-shadow: 12px 12px 12px gainsboro;
+  padding: 20px;
+}
+.profile__border__change__description {
+  margin-top: 20px;
+}
+.profile__border__change__input {
+  margin-top: 40px;
+  display: block;
+  text-align: center;
+  margin: 40px auto;
+}
+.profile__border__change__password {
+  width: 500px;
+  margin: 0 auto;
+}
+.profile__border__change__passwordBox {
+  background-color: white;
+  border: none;
+}
+.profile__border__change__line {
+  width: 500px;
+  text-align: center;
+  margin: 0 auto;
+}
+.profile__border__changePassword {
+  margin-top: 20px;
+  padding: 10px 190px;
+  border: none;
+  border-radius: 12px;
+  background-color: #6379f4;
+  color: white;
+}
+/*Manage Phone---------------------------------------------------------*/
+.profile__border__change__inputManage {
+  margin-top: 40px;
+  display: block;
+}
+.profile__border__change__inputManage__margin {
+  text-align: right;
+}
+.profile__border__change__inputManage__button {
+  border: none;
+  background-color: white;
+  text-align: right;
+}
+.profile__border__change__inputManage__button:hover {
+  border: none;
+  background-color: white;
+  text-align: right;
+  padding: 0 8px;
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .profile__border__change {
+    border: solid gainsboro 1px;
+    border-radius: 12px;
+    box-shadow: 12px 12px 12px gainsboro;
+    padding: 20px;
+  }
+  .profile__border__change__description {
+    margin-top: 20px;
+    font-size: 13px;
+  }
+  .profile__border__change__input {
+    margin-top: 40px;
+    display: block;
+    text-align: center;
+    margin: 40px auto;
+  }
+  .profile__border__change__password {
+    width: 500px;
+    margin: 0 auto;
+  }
+  .profile__border__change__passwordBox {
+    background-color: white;
+    border: none;
+  }
+  .profile__border__change__line {
+    width: 500px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .profile__border__changePassword {
+    margin-top: 20px;
+    padding: 10px 190px;
+    border: none;
+    border-radius: 12px;
+    background-color: #6379f4;
+    color: white;
+  }
+  /*Manage Phone---------------------------------------------------------*/
+  .profile__border__change__inputManage {
+    margin-top: 40px;
+    display: block;
+  }
+  .profile__border__change__inputManage__margin {
+    text-align: right;
+  }
+  .profile__border__change__inputManage__button {
+    border: none;
+    background-color: white;
+    text-align: right;
+  }
+  .profile__border__change__inputManage__button:hover {
+    border: none;
+    background-color: white;
+    text-align: right;
+    padding: 0 8px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .profile__border__change {
+    border: solid gainsboro 1px;
+    border-radius: 12px;
+    box-shadow: 12px 12px 12px gainsboro;
+    padding: 20px;
+  }
+  .profile__border__change__description {
+    margin-top: 20px;
+    font-size: 13px;
+  }
+  .profile__border__change__input {
+    margin-top: 40px;
+    display: block;
+    text-align: center;
+    margin: 40px auto;
+  }
+  .profile__border__change__password {
+    width: 300px;
+    margin: 0 auto;
+  }
+  .profile__border__change__passwordBox {
+    background-color: white;
+    border: none;
+  }
+  .profile__border__change__line {
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .profile__border__changePassword {
+    margin-top: 20px;
+    padding: 10px 95px;
+    border: none;
+    border-radius: 12px;
+    background-color: #6379f4;
+    color: white;
+    font-size: 15px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .profile__border__change {
+    border: solid gainsboro 1px;
+    border-radius: 12px;
+    box-shadow: 12px 12px 12px gainsboro;
+    padding: 20px;
+  }
+  .profile__border__change__description {
+    margin-top: 20px;
+    font-size: 13px;
+  }
+  .profile__border__change__input {
+    margin-top: 40px;
+    display: block;
+    text-align: center;
+    margin: 40px auto;
+  }
+  .profile__border__change__password {
+    width: 300px;
+    margin: 0 auto;
+  }
+  .profile__border__change__passwordBox {
+    background-color: white;
+    border: none;
+  }
+  .profile__border__change__line {
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .profile__border__changePassword {
+    margin-top: 20px;
+    padding: 10px 95px;
+    border: none;
+    border-radius: 12px;
+    background-color: #6379f4;
+    color: white;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .profile__border__change {
+    border: solid gainsboro 1px;
+    border-radius: 12px;
+    box-shadow: 12px 12px 12px gainsboro;
+    padding: 20px;
+  }
+  .profile__border__change__description {
+    margin-top: 20px;
+    font-size: 13px;
+  }
+  .profile__border__change__input {
+    margin-top: 40px;
+    display: block;
+    text-align: center;
+    margin: 40px auto;
+  }
+  .profile__border__change__password {
+    width: 250px;
+    margin: 0 auto;
+  }
+  .profile__border__change__passwordBox {
+    background-color: white;
+    border: none;
+  }
+  .profile__border__change__line {
+    width: 250px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .profile__border__changePassword {
+    margin-top: 20px;
+    padding: 10px 70px;
+    border: none;
+    border-radius: 12px;
+    background-color: #6379f4;
+    color: white;
+    font-size: 15px;
+  }
+}

@@ -1,8 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { postLogin } from "../../stores/action/login";
+import { getUserById } from "../../stores/action/user";
 
 export default function login() {
+  const dispatch = useDispatch();
+  const [message, setMessage] = useState("");
+  const [isError, setError] = useState(true);
+  const [form, setForm] = useState({
+    email: "",
+    password: "",
+  });
+  console.log(isError);
   const handleChangeForm = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      const resultLogin = await dispatch(postLogin(form));
+      console.log((await resultLogin.payload).data.msg);
+      localStorage.setItem("userId", (await resultLogin.payload).data.data.id);
+      localStorage.setItem("pin", (await resultLogin.payload).data.data.pin);
+      localStorage.setItem(
+        "token",
+        (await resultLogin.payload).data.data.token
+      );
+      setMessage((await resultLogin.payload).data.msg);
+      setError(false);
+      // setTimeout(() => {
+      //   navigate("/");
+      // }, 1000);
+    } catch (error) {
+      console.log(error.response);
+      setError(true);
+      setMessage(error.response.data.msg);
+    }
   };
   return (
     <div>
@@ -32,6 +66,7 @@ export default function login() {
             wherever you are. Desktop, laptop, mobile phone? we cover all of
             that for you!
           </p>
+
           <div className="col g-3">
             <div className="col">
               <div className="input-group mb-3">
@@ -55,6 +90,8 @@ export default function login() {
                   placeholder="Type Your Email"
                   aria-label="Email"
                   aria-describedby="basic-addon1"
+                  name="email"
+                  onChange={handleChangeForm}
                 />
               </div>
             </div>
@@ -75,19 +112,29 @@ export default function login() {
                     </svg>
                   </span>
                 </div>
+
                 <input
                   type="password"
                   className="form-control py-2 border-start-0 email"
                   placeholder="Type Your Password"
                   aria-label="Password"
                   aria-describedby="basic-addon1"
+                  name="password"
+                  onChange={handleChangeForm}
                 />
               </div>
               <hr />
               <p className="forgotPassword">forgot password?</p>
+              {!isError ? (
+                <h6 className="succesMessage">{message}</h6>
+              ) : (
+                <h6 className="errorMessage">{message}</h6>
+              )}
+
               <button
                 type="button"
                 className="btn btn-primary btn-lg btn-block buttoncolor"
+                onClick={handleSubmit}
               >
                 Log In
               </button>

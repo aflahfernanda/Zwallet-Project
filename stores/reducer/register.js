@@ -5,16 +5,16 @@ const initialState = {
   pageInfo: {},
   msg: "",
 };
-const login = (state = initialState, action) => {
+const register = (state = initialState, action) => {
   switch (action.type) {
-    case "POST_LOGIN_PENDING": {
+    case "POST_REGISTER_PENDING": {
       return {
         ...state,
         isLoading: true,
         isError: false,
       };
     }
-    case "POST_LOGIN_FULFILLED": {
+    case "POST_REGISTER_FULFILLED": {
       return {
         ...state,
         isLoading: false,
@@ -22,7 +22,7 @@ const login = (state = initialState, action) => {
         msg: action.payload.data.msg,
       };
     }
-    case "POST_LOGIN_REJECTED": {
+    case "POST_REGISTER_REJECTED": {
       return {
         ...state,
         isLoading: true,
@@ -31,10 +31,11 @@ const login = (state = initialState, action) => {
         msg: action.payload,
       };
     }
+
     default: {
       return state;
     }
   }
 };
 
-export default login;
+export default register;

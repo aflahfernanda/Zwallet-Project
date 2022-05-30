@@ -1,0 +1,239 @@
+.profile__border {
+  border: solid gainsboro 1px;
+  border-radius: 12px;
+  box-shadow: 12px 12px 12px gainsboro;
+  padding: 20px;
+  text-align: center;
+  margin: 0 auto;
+}
+.profile__image {
+  width: 80px;
+  height: 80px;
+  border: solid gainsboro 2px;
+  border-radius: 12px;
+  display: inline-block;
+}
+.profile__edit {
+  /* display: block; */
+  display: block;
+  border: none;
+  text-align: center;
+  margin: 15px auto;
+  background-color: white;
+  color: gray;
+  background-image: url("/addnotes.png");
+  background-repeat: no-repeat;
+  padding: 0 25px;
+}
+.profile__option {
+  background-color: #e5e8ed;
+  margin: 15px auto;
+  border-radius: 12px;
+  padding: 15px 20px;
+  width: 500px;
+  height: 55px;
+  text-align: end;
+}
+.profile__option__page {
+  text-align: left;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: nunito;
+}
+.profile__option:hover {
+  background-color: gainsboro;
+  cursor: pointer;
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .profile__border {
+    border: solid gainsboro 1px;
+    border-radius: 12px;
+    box-shadow: 12px 12px 12px gainsboro;
+    padding: 20px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .profile__image {
+    width: 80px;
+    height: 80px;
+    border: solid gainsboro 2px;
+    border-radius: 12px;
+    display: inline-block;
+  }
+  .profile__edit {
+    /* display: block; */
+    display: block;
+    border: none;
+    text-align: center;
+    margin: 15px auto;
+    background-color: white;
+    color: gray;
+    background-image: url("/addnotes.png");
+    background-repeat: no-repeat;
+    padding: 0 25px;
+  }
+  .profile__option {
+    background-color: #e5e8ed;
+    margin: 15px auto;
+    border-radius: 12px;
+    padding: 15px 20px;
+    width: 500px;
+    height: 55px;
+    text-align: end;
+  }
+  .profile__option__page {
+    text-align: left;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: nunito;
+  }
+  .profile__option:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .profile__border {
+    border: solid gainsboro 1px;
+    border-radius: 12px;
+    box-shadow: 12px 12px 12px gainsboro;
+    padding: 20px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .profile__image {
+    width: 80px;
+    height: 80px;
+    border: solid gainsboro 2px;
+    border-radius: 12px;
+    display: inline-block;
+  }
+  .profile__edit {
+    /* display: block; */
+    display: block;
+    border: none;
+    text-align: center;
+    margin: 15px auto;
+    background-color: white;
+    color: gray;
+    background-image: url("/addnotes.png");
+    background-repeat: no-repeat;
+    padding: 0 25px;
+  }
+  .profile__option {
+    background-color: #e5e8ed;
+    margin: 15px auto;
+    border-radius: 12px;
+    padding: 15px 20px;
+    width: 300px;
+    height: 55px;
+    text-align: end;
+  }
+  .profile__option__page {
+    text-align: left;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: nunito;
+  }
+  .profile__option:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .profile__border {
+    border: solid gainsboro 1px;
+    border-radius: 12px;
+    box-shadow: 12px 12px 12px gainsboro;
+    padding: 20px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .profile__image {
+    width: 80px;
+    height: 80px;
+    border: solid gainsboro 2px;
+    border-radius: 12px;
+    display: inline-block;
+  }
+  .profile__edit {
+    /* display: block; */
+    display: block;
+    border: none;
+    text-align: center;
+    margin: 15px auto;
+    background-color: white;
+    color: gray;
+    background-image: url("/addnotes.png");
+    background-repeat: no-repeat;
+    padding: 0 25px;
+  }
+  .profile__option {
+    background-color: #e5e8ed;
+    margin: 15px auto;
+    border-radius: 12px;
+    padding: 15px 20px;
+    width: 250px;
+    height: 55px;
+    text-align: end;
+  }
+  .profile__option__page {
+    text-align: left;
+    font-weight: bold;
+    font-size: 13px;
+    font-family: nunito;
+  }
+  .profile__option:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .profile__border {
+    border: solid gainsboro 1px;
+    border-radius: 12px;
+    box-shadow: 12px 12px 12px gainsboro;
+    padding: 20px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .profile__image {
+    width: 80px;
+    height: 80px;
+    border: solid gainsboro 2px;
+    border-radius: 12px;
+    display: inline-block;
+  }
+  .profile__edit {
+    /* display: block; */
+    display: block;
+    border: none;
+    text-align: center;
+    margin: 15px auto;
+    background-color: white;
+    color: gray;
+    background-image: url("/addnotes.png");
+    background-repeat: no-repeat;
+    padding: 0 25px;
+  }
+  .profile__option {
+    background-color: #e5e8ed;
+    margin: 15px auto;
+    border-radius: 12px;
+    padding: 15px 20px;
+    width: 250px;
+    height: 55px;
+    text-align: end;
+  }
+  .profile__option__page {
+    text-align: left;
+    font-weight: bold;
+    font-size: 13px;
+    font-family: nunito;
+  }
+  .profile__option:hover {
+    background-color: gainsboro;
+    cursor: pointer;
+  }
+}

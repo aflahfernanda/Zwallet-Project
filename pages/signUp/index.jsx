@@ -1,8 +1,48 @@
-import React from "react";
-const imageProfile = {
-  width: "80%",
-};
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { postRegister } from "../../stores/action/register";
+import { useRouter } from "next/router";
+import { useStore } from "react-redux";
 export default function signup() {
+  const dispatch = useDispatch();
+  const { store } = useStore();
+  const router = useRouter();
+  const [message, setMessage] = useState("");
+  const [isError, setError] = useState(true);
+  const [form, setForm] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  });
+  const [userId, setUserId] = useState("");
+  console.log(userId);
+  const handleChangeForm = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+  const handleRegister = async (e) => {
+    try {
+      e.preventDefault();
+      const resultRegister = await dispatch(postRegister(form));
+      // console.log((await resultRegister.payload).data.data.id);
+      setUserId((await resultRegister.payload).data.data.id);
+      setMessage((await resultRegister.payload).data.msg);
+      setError(false);
+      router.push(
+        {
+          pathname: "/createPin",
+          query: { id: `${(await resultRegister.payload).data.data.id}` },
+        },
+        "/createPin"
+      );
+    } catch (error) {
+      console.log(error.response);
+      setError(true);
+      setMessage(error.response.data.msg);
+    }
+  };
+  console.log(form);
   return (
     <div>
       <div className="row rowclass">
@@ -54,6 +94,8 @@ export default function signup() {
                   placeholder="Enter your firstname"
                   aria-label="Email"
                   aria-describedby="basic-addon1"
+                  name="firstName"
+                  onChange={handleChangeForm}
                 />
               </div>
               <hr />
@@ -78,6 +120,8 @@ export default function signup() {
                   placeholder="Enter your lastname"
                   aria-label="Email"
                   aria-describedby="basic-addon1"
+                  name="lastName"
+                  onChange={handleChangeForm}
                 />
               </div>
               <hr />
@@ -102,6 +146,8 @@ export default function signup() {
                   placeholder="Enter your e-mail"
                   aria-label="Email"
                   aria-describedby="basic-addon1"
+                  name="email"
+                  onChange={handleChangeForm}
                 />
               </div>
             </div>
@@ -128,12 +174,20 @@ export default function signup() {
                   placeholder="Create your password"
                   aria-label="Password"
                   aria-describedby="basic-addon1"
+                  name="password"
+                  onChange={handleChangeForm}
                 />
               </div>
               <hr />
+              {!isError ? (
+                <h6 className="succesMessage">{message}</h6>
+              ) : (
+                <h6 className="errorMessage">{message}</h6>
+              )}
               <button
                 type="button"
                 className="btn btn-primary btn-lg btn-block buttoncolor"
+                onClick={handleRegister}
               >
                 Sign Up
               </button>

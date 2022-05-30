@@ -1,8 +1,34 @@
-import React from "react";
-const imageProfile = {
-  width: "80%",
-};
-export default function resetPassword() {
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { postForgotPassword } from "../../stores/action/password";
+export default function ForgotPassword() {
+  const dispatch = useDispatch();
+  const [message, setMessage] = useState("");
+  const [isError, setError] = useState(true);
+  const [form, setForm] = useState({
+    email: "",
+    linkDirect: "http://localhost:3000/forgotPassword/",
+  });
+  const handleChangeForm = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      const resultPassword = await dispatch(postForgotPassword(form));
+      setMessage((await resultPassword.payload).data.msg);
+      setError(false);
+      // setTimeout(() => {
+      //   navigate("/");
+      // }, 1000);
+    } catch (error) {
+      console.log(error.response);
+      setError(true);
+      setMessage(error.response.data.msg);
+    }
+  };
+  console.log(form);
   return (
     <div>
       <div className="row rowclass">
@@ -51,14 +77,22 @@ export default function resetPassword() {
               placeholder="Enter your e-mail"
               aria-label="Email"
               aria-describedby="basic-addon1"
+              name="email"
+              onChange={handleChangeForm}
             />
           </div>
+          {!isError ? (
+            <h6 className="succesMessage">{message}</h6>
+          ) : (
+            <h6 className="errorMessage">{message}</h6>
+          )}
 
           <div className="col g-3">
             <div className="col">
               <button
                 type="button"
                 className="btn btn-primary btn-lg btn-block buttoncolor"
+                onClick={handleSubmit}
               >
                 Confirm
               </button>

@@ -1,10 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getDataUser } from "../../stores/action/user";
 import Nav from "../../components/nav";
 import SideNav from "../../components/sideNav";
 import TransferCard from "../../components/transferCard";
 import Footer from "../../components/footer";
 
 export default function TopUp() {
+  const dispatch = useDispatch();
+  const [users, setUser] = useState([]);
+  useEffect(() => {
+    getdataUser();
+  }, []);
+  const user = useSelector((state) => state.user);
+  const getdataUser = async () => {
+    try {
+      const dataUser = await dispatch(getDataUser());
+      setUser((await dataUser.payload).data.data);
+    } catch (error) {
+      console.log(error.response);
+    }
+  };
   return (
     <div>
       <Nav />
@@ -17,7 +33,7 @@ export default function TopUp() {
           <div className="col-9 transfer__userTransfer">
             <h5>Search Receiver</h5>
             <div className="input-group mb-3 ">
-              <div class="input-group-prepend">
+              <div className="input-group-prepend">
                 <span className="input-group-text searchBar" id="basic-addon1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

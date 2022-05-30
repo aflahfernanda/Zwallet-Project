@@ -1,8 +1,8 @@
 import axios from "../../utils/axios";
 
-export const postLogin = () => {
+export const postLogin = (form) => {
   return {
     type: "POST_LOGIN",
-    payload: axios.post(`auth/login`),
+    payload: axios.post(`auth/login`, form),
   };
 };
