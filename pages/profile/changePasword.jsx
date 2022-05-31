@@ -1,10 +1,54 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserById, updatePasswordUser } from "../../stores/action/user";
 import Nav from "../../components/nav";
 import SideNav from "../../components/sideNav";
 import TransferCard from "../../components/transferCard";
 import Footer from "../../components/footer";
 
 export default function ChangePassword() {
+  const dispatch = useDispatch();
+  const [users, setUser] = useState("");
+  useEffect(() => {
+    getdataUserId();
+  }, []);
+  const user = useSelector((state) => state.user);
+  const getdataUserId = async () => {
+    try {
+      const dataUser = await dispatch(
+        getUserById(localStorage.getItem("userId"))
+      );
+      setUser(dataUser.action.payload.data.data);
+      console.log(dataUser);
+    } catch (error) {
+      console.log(error.response);
+    }
+  };
+  const [message, setMessage] = useState("");
+  const [isError, setError] = useState(true);
+  const id = users.id;
+  const [form, setForm] = useState({
+    oldPassword: "",
+    newPassword: "",
+    confirmPassword: "",
+  });
+  const handleChangeForm = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+  const handlePassword = async (e) => {
+    try {
+      e.preventDefault();
+      const resultPassword = await dispatch(updatePasswordUser(id, form));
+      // console.log((await resultRegister.payload).data.data.id);
+      setMessage(await resultPassword.action.payload.data.msg);
+      setError(false);
+      console.log(resultPassword);
+    } catch (error) {
+      console.log(error.response);
+      setError(true);
+      setMessage(error.response.data.msg);
+    }
+  };
   return (
     <div>
       <Nav />
@@ -44,6 +88,8 @@ export default function ChangePassword() {
                   placeholder="Current password"
                   aria-label="Username"
                   aria-describedby="basic-addon1"
+                  name="oldPassword"
+                  onChange={handleChangeForm}
                 />
                 <hr />
               </div>
@@ -72,6 +118,8 @@ export default function ChangePassword() {
                   placeholder="New password"
                   aria-label="Username"
                   aria-describedby="basic-addon1"
+                  name="newPassword"
+                  onChange={handleChangeForm}
                 />
                 <hr />
               </div>
@@ -100,10 +148,20 @@ export default function ChangePassword() {
                   placeholder="Repeat New Password"
                   aria-label="Username"
                   aria-describedby="basic-addon1"
+                  name="confirmPassword"
+                  onChange={handleChangeForm}
                 />
               </div>
               <hr className="profile__border__change__line" />
-              <button className="profile__border__changePassword">
+              {!isError ? (
+                <h6 className="succesMessage">{message}</h6>
+              ) : (
+                <h6 className="errorMessage">{message}</h6>
+              )}
+              <button
+                className="profile__border__changePassword"
+                onClick={handlePassword}
+              >
                 Change Password
               </button>
             </div>

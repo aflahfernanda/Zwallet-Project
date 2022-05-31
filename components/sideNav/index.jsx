@@ -1,6 +1,39 @@
-import React from "react";
-
+import React, { useState } from "react";
+import { Button, Modal } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { postTopUp } from "../../stores/action/topup";
 export default function SideNav() {
+  const dispatch = useDispatch();
+  const [topUp, setTopUp] = useState(false);
+  const [message, setMessage] = useState("");
+  const [isError, setError] = useState(true);
+  const [form, setForm] = useState({
+    amount: "",
+  });
+  const handleTopUp = () => {
+    setTopUp(true);
+  };
+  const handleNotTopUp = () => {
+    setTopUp(false);
+  };
+  const handleChangeForm = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      const resultTopUp = await dispatch(postTopUp(form));
+      console.log(resultTopUp);
+      setMessage(resultTopUp.action.payload.data.msg);
+      setError(false);
+    } catch (error) {
+      console.log(error.response);
+      setError(true);
+      setMessage(error.response);
+    }
+  };
+
+  console.log(form);
   return (
     <div>
       <nav className="backgroundNav">
@@ -51,7 +84,51 @@ export default function SideNav() {
               </svg>
             </div>
             <div className="col-8">
-              <p className="topUpText">Top Up</p>
+              <Button onClick={handleTopUp} className="topUpText">
+                {" "}
+                Top Up
+              </Button>
+              <Modal show={topUp} className="modalBox">
+                <Modal.Header>
+                  <div className="transfertext">
+                    <div className="row">
+                      <div className="col-9">
+                        <h5 className="transferText">Top Up</h5>
+                      </div>
+                      <div className="col-3 ">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="30"
+                          height="30"
+                          fill="currentColor"
+                          class="bi bi-x"
+                          viewBox="0 0 16 16"
+                          onClick={handleNotTopUp}
+                        >
+                          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </Modal.Header>
+                <Modal.Body>
+                  <p>Enter the amount of money, and click submit</p>
+                  <div className="inputTopUp">
+                    <input
+                      type="number"
+                      name="amount"
+                      className="inputTopUpBox"
+                      onChange={handleChangeForm}
+                    />
+                  </div>
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button onClick={handleSubmit}>Submit</Button>
+                </Modal.Footer>
+              </Modal>
+              {/* <p className="  topUpText" type="button">
+                Top Up
+              </p> */}
             </div>
           </div>
         </div>

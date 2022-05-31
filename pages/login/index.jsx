@@ -20,14 +20,11 @@ export default function login() {
     try {
       e.preventDefault();
       const resultLogin = await dispatch(postLogin(form));
-      console.log((await resultLogin.payload).data.msg);
-      localStorage.setItem("userId", (await resultLogin.payload).data.data.id);
-      localStorage.setItem("pin", (await resultLogin.payload).data.data.pin);
-      localStorage.setItem(
-        "token",
-        (await resultLogin.payload).data.data.token
-      );
-      setMessage((await resultLogin.payload).data.msg);
+      console.log(resultLogin);
+      localStorage.setItem("userId", resultLogin.action.payload.data.data.id);
+      localStorage.setItem("pin", resultLogin.action.payload.data.data.pin);
+      localStorage.setItem("token", resultLogin.action.payload.data.data.token);
+      setMessage(resultLogin.action.payload.data.msg);
       setError(false);
       // setTimeout(() => {
       //   navigate("/");
@@ -38,6 +35,7 @@ export default function login() {
       setMessage(error.response.data.msg);
     }
   };
+
   return (
     <div>
       <div className="row rowclass">

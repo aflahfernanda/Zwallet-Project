@@ -40,6 +40,13 @@
   padding: 10px;
   border-radius: 12px;
 }
+.transfer__userBox {
+  border: solid gainsboro 1px;
+  padding: 20px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+}
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .historyCard {
     border: solid gainsboro 1px;

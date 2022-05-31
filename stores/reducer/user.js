@@ -6,7 +6,6 @@ const initialState = {
   msg: "",
 };
 const user = (state = initialState, action) => {
-  console.log(state);
   switch (action.type) {
     case "GET_DATA_USER_PENDING": {
       return {
@@ -18,7 +17,7 @@ const user = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        data: action.payload.data.data[0],
+        data: action.payload.data.data,
         msg: action.payload.data.msg,
       };
     }
@@ -41,7 +40,7 @@ const user = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        data: action.payload.data.data[0],
+        data: action.payload.data.data,
         msg: action.payload.data.msg,
       };
     }
@@ -70,6 +69,52 @@ const user = (state = initialState, action) => {
       };
     }
     case "UPDATE_PIN_USER_REJECTED": {
+      return {
+        ...state,
+        isLoading: true,
+        isError: false,
+        msg: action.payload.response.data.msg,
+      };
+    }
+    case "UPDATE_PASSWORD_USER_PENDING": {
+      return {
+        ...state,
+        isLoading: true,
+        isError: false,
+      };
+    }
+    case "UPDATE_PASSWORD_USER_FULFILLED": {
+      return {
+        ...state,
+        isLoading: false,
+        isError: false,
+        msg: action.payload.data.msg,
+      };
+    }
+    case "UPDATE_PASSWORD_USER_REJECTED": {
+      return {
+        ...state,
+        isLoading: true,
+        isError: false,
+        msg: action.payload.response.data.msg,
+      };
+    }
+    case "UPDATE_PHONE_USER_PENDING": {
+      return {
+        ...state,
+        isLoading: true,
+        isError: false,
+      };
+    }
+    case "UPDATE_PHONE_USER_FULFILLED": {
+      return {
+        ...state,
+        isLoading: false,
+        isError: false,
+        msg: action.payload.data.msg,
+      };
+    }
+    case "UPDATE_PHONE_USER_REJECTED": {
       return {
         ...state,
         isLoading: true,

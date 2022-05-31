@@ -1,10 +1,52 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserById, updatePhoneUser } from "../../stores/action/user";
 import Nav from "../../components/nav";
 import SideNav from "../../components/sideNav";
 import TransferCard from "../../components/transferCard";
 import Footer from "../../components/footer";
 
 export default function AddPhone() {
+  const dispatch = useDispatch();
+  const [users, setUser] = useState("");
+  useEffect(() => {
+    getdataUserId();
+  }, []);
+  const user = useSelector((state) => state.user);
+  const getdataUserId = async () => {
+    try {
+      const dataUser = await dispatch(
+        getUserById(localStorage.getItem("userId"))
+      );
+      setUser(dataUser.action.payload.data.data);
+      console.log(dataUser);
+    } catch (error) {
+      console.log(error.response);
+    }
+  };
+  const [message, setMessage] = useState("");
+  const [isError, setError] = useState(true);
+  const id = users.id;
+  const [form, setForm] = useState({
+    noTelp: "",
+  });
+  const handleChangeForm = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+  const handlePhone = async (e) => {
+    try {
+      e.preventDefault();
+      const resultPhone = await dispatch(updatePhoneUser(id, form));
+      // console.log((await resultRegister.payload).data.data.id);
+      setMessage(await resultPhone.action.payload.data.msg);
+      setError(false);
+      console.log(resultPhone);
+    } catch (error) {
+      console.log(error.response);
+      setError(true);
+      setMessage(error.response.data.msg);
+    }
+  };
   return (
     <div>
       <Nav />
@@ -46,12 +88,21 @@ export default function AddPhone() {
                   placeholder="Enter your phone number"
                   aria-label="Username"
                   aria-describedby="basic-addon1"
+                  name="noTelp"
+                  onChange={handleChangeForm}
                 />
                 <hr />
               </div>
               <hr className="profile__border__change__line" />
-
-              <button className="profile__border__changePassword">
+              {!isError ? (
+                <h6 className="succesMessage">{message}</h6>
+              ) : (
+                <h6 className="errorMessage">{message}</h6>
+              )}
+              <button
+                className="profile__border__changePassword"
+                onClick={handlePhone}
+              >
                 Add Phone Number
               </button>
             </div>

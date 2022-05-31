@@ -1,10 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getDataUser } from "../../stores/action/user";
 import Nav from "../../components/nav";
 import SideNav from "../../components/sideNav";
 import TransferCard from "../../components/transferCard";
 import Footer from "../../components/footer";
-
+import { useRouter } from "next/router";
+import Link from "next/link";
 export default function Transfer() {
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const [users, setUser] = useState([]);
+  useEffect(() => {
+    getdataUser();
+  }, []);
+  const user = useSelector((state) => state.user);
+  const getdataUser = async () => {
+    try {
+      const dataUser = await dispatch(getDataUser());
+      setUser(dataUser.action.payload.data.data);
+    } catch (error) {
+      console.log(error.response);
+    }
+  };
+  {
+    /*Link--------------------------------------------------------------------*/
+  }
+  const handleDetailUser = (id) => {
+    router.push({ pathname: "/transfer/[id]", query: { id: id } });
+    console.log(id);
+  };
   return (
     <div>
       <Nav />
@@ -39,9 +64,12 @@ export default function Transfer() {
                 aria-describedby="basic-addon1"
               />
             </div>
-            <div>
-              <TransferCard />
-            </div>
+
+            {user.data.map((item) => (
+              <div key={item.id}>
+                <TransferCard data={item} handleDetail={handleDetailUser} />
+              </div>
+            ))}
           </div>
         </div>
       </div>

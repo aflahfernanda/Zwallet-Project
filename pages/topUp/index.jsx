@@ -16,11 +16,15 @@ export default function TopUp() {
   const getdataUser = async () => {
     try {
       const dataUser = await dispatch(getDataUser());
-      setUser((await dataUser.payload).data.data);
+      setUser(dataUser.action.payload.data.data);
     } catch (error) {
       console.log(error.response);
     }
   };
+  {
+    /*Link--------------------------------------------------------------------*/
+  }
+
   return (
     <div>
       <Nav />
@@ -56,7 +60,9 @@ export default function TopUp() {
               />
             </div>
             <div>
-              <TransferCard />
+              {user.data.map((item) => (
+                <TransferCard key={item.id} />
+              ))}
             </div>
           </div>
         </div>

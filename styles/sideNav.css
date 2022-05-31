@@ -51,9 +51,39 @@
 }
 .topUpText {
   font-size: 20px;
+  background-color: white;
+  color: black;
+  border: none;
+  position: relative;
+  right: 15px;
+}
+.topUpText:hover {
+  font-size: 20px;
+  background-color: gainsboro;
+  color: black;
+  border: none;
+  position: relative;
+  right: 15px;
+}
+.modalBox {
+  margin-top: 100px;
+}
+.exitModal {
+  text-align: right;
 }
 .profileText {
   font-size: 20px;
+}
+.inputTopUp {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 70px;
+}
+.inputTopUpBox {
+  text-align: center;
+  border-radius: 12px;
+  height: 50px;
+  width: 100%;
 }
 .logOutText {
   font-size: 20px;
