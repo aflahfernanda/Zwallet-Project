@@ -3,9 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { postLogin } from "../../stores/action/login";
 import { getUserById } from "../../stores/action/user";
+import Cookies from "js-cookie";
+import { useRouter } from "next/router";
 
 export default function login() {
   const dispatch = useDispatch();
+  const router = useRouter();
   const [message, setMessage] = useState("");
   const [isError, setError] = useState(true);
   const [form, setForm] = useState({
@@ -21,11 +24,16 @@ export default function login() {
       e.preventDefault();
       const resultLogin = await dispatch(postLogin(form));
       console.log(resultLogin);
-      localStorage.setItem("userId", resultLogin.action.payload.data.data.id);
-      localStorage.setItem("pin", resultLogin.action.payload.data.data.pin);
-      localStorage.setItem("token", resultLogin.action.payload.data.data.token);
+      Cookies.set("userId", resultLogin.action.payload.data.data.id);
+      Cookies.set("pin", resultLogin.action.payload.data.data.pin);
+      Cookies.set("token", resultLogin.action.payload.data.data.token);
       setMessage(resultLogin.action.payload.data.msg);
       setError(false);
+      if (resultLogin.action.payload.data.data.pin == null) {
+        router.push("/createPin");
+      } else {
+        router.push("/dashboard/home");
+      }
       // setTimeout(() => {
       //   navigate("/");
       // }, 1000);
@@ -35,7 +43,12 @@ export default function login() {
       setMessage(error.response.data.msg);
     }
   };
-
+  const handleForgotPassword = () => {
+    router.push("/forgotPassword");
+  };
+  const handleRegister = () => {
+    router.push("/signUp");
+  };
   return (
     <div>
       <div className="row rowclass">
@@ -122,7 +135,19 @@ export default function login() {
                 />
               </div>
               <hr />
-              <p className="forgotPassword">forgot password?</p>
+              <p className="forgotPassword">
+                {" "}
+                <button
+                  onClick={handleForgotPassword}
+                  style={{
+                    backgroundColor: "white",
+                    border: "none",
+                    color: "#6379F4",
+                  }}
+                >
+                  Forgot Password ?
+                </button>
+              </p>
               {!isError ? (
                 <h6 className="succesMessage">{message}</h6>
               ) : (
@@ -136,7 +161,19 @@ export default function login() {
               >
                 Log In
               </button>
-              <p className="account">Dont have an account? Lets Sign Up</p>
+              <p className="account">
+                Dont have an account?{" "}
+                <button
+                  onClick={handleRegister}
+                  style={{
+                    backgroundColor: "white",
+                    border: "none",
+                    color: "#6379F4",
+                  }}
+                >
+                  Lets Sign Up
+                </button>
+              </p>
             </div>
           </div>
         </div>

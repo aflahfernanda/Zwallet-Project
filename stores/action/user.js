@@ -13,6 +13,24 @@ export const getUserById = (id) => {
     payload: axios.get(`user/profile/${id}`),
   };
 };
+export const getCheckPinUser = (pinKey) => {
+  return {
+    type: "GET_CHECK_PIN_USER",
+    payload: axios.get(`user/pin?pin=${pinKey}`),
+  };
+};
+export const updateProfileUser = (id, form) => {
+  return {
+    type: "UPDATE_PROFILE_USER",
+    payload: axios.patch(`user/profile/${id}`, form),
+  };
+};
+export const updateImageUser = (id, form) => {
+  return {
+    type: "UPDATE_IMAGE_USER",
+    payload: axios.patch(`user/image/${id}`, form),
+  };
+};
 export const updatePinUser = (id, form) => {
   return {
     type: "UPDATE_PIN_USER",
@@ -29,5 +47,11 @@ export const updatePhoneUser = (id, form) => {
   return {
     type: "UPDATE_PHONE_USER",
     payload: axios.patch(`user/profile/${id}`, form),
+  };
+};
+export const deleteImage = (id) => {
+  return {
+    type: "DELETE_IMAGE",
+    payload: axios.delete(`user/image/${id}`),
   };
 };

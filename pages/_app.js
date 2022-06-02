@@ -9,6 +9,7 @@ import "../styles/home.css";
 import "../styles/transfer.css";
 import "../styles/profile.css";
 import "../styles/change.css";
+import "../styles/transactionStatus.css";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import { wrapper, store } from "../stores/index";
 import { Provider } from "react-redux";

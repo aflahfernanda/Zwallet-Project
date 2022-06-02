@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { postTopUp } from "../../stores/action/topup";
+import { postLogOut } from "../../stores/action/logout";
+import Cookies from "js-cookie";
+import { useRouter } from "next/router";
 export default function SideNav() {
   const dispatch = useDispatch();
+  const router = useRouter();
   const [topUp, setTopUp] = useState(false);
   const [message, setMessage] = useState("");
   const [isError, setError] = useState(true);
@@ -25,6 +29,7 @@ export default function SideNav() {
       const resultTopUp = await dispatch(postTopUp(form));
       console.log(resultTopUp);
       setMessage(resultTopUp.action.payload.data.msg);
+      router.push(resultTopUp.action.payload.data.data.redirectUrl);
       setError(false);
     } catch (error) {
       console.log(error.response);
@@ -32,22 +37,53 @@ export default function SideNav() {
       setMessage(error.response);
     }
   };
+  const handleHome = () => {
+    router.push("/dashboard/home");
+  };
+  const handleTransfer = () => {
+    router.push("/transfer");
+  };
+  const handleProfile = () => {
+    router.push("/profile");
+  };
+  const handleLogOut = async () => {
+    try {
+      const logout = await dispatch(postLogOut());
 
-  console.log(form);
+      console.log(logout);
+      Cookies.remove("userId");
+      Cookies.remove("pin");
+      Cookies.remove("token");
+      alert("succes Logout");
+      router.push("/login");
+    } catch (error) {
+      console.log(error.response);
+    }
+  };
+  console.log(message);
   return (
     <div>
       <nav className="backgroundNav">
-        <div className="dashboardNav">
+        <div className="dashboardNav" onClick={handleHome}>
           <div className="row">
             <div className="col-3">
-              <img src="/dashboard.png" alt="dashboard" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="38"
+                height="38"
+                fill="currentColor"
+                class="bi bi-border-all"
+                viewBox="0 0 16 16"
+              >
+                <path d="M0 0h16v16H0V0zm1 1v6.5h6.5V1H1zm7.5 0v6.5H15V1H8.5zM15 8.5H8.5V15H15V8.5zM7.5 15V8.5H1V15h6.5z" />
+              </svg>
             </div>
             <div className="col-8">
               <p className="dash">Dashboard</p>
             </div>
           </div>
         </div>
-        <div className="transfer">
+        <div className="transfer" onClick={handleTransfer}>
           <div className="row">
             <div className="col-3">
               <svg
@@ -132,7 +168,7 @@ export default function SideNav() {
             </div>
           </div>
         </div>
-        <div className="profileNav">
+        <div className="profileNav" onClick={handleProfile}>
           <div className="row">
             <div className="col-3">
               <svg
@@ -151,7 +187,7 @@ export default function SideNav() {
             </div>
           </div>
         </div>
-        <div className="logOut">
+        <div className="logOut" onClick={handleLogOut}>
           <div className="row">
             <div className="col-3">
               <svg

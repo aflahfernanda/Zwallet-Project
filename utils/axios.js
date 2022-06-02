@@ -1,8 +1,8 @@
 import axios from "axios";
+import Cookies from "js-cookie";
 
 const axiosApiIntances = axios.create({
-  baseURL: "https://fazzpay.herokuapp.com",
-  // baseURL: process.env.REACT_APP_SOURCE,
+  baseURL: process.env.URL_BACKEND,
 });
 
 // Add a request interceptor
@@ -10,7 +10,7 @@ axiosApiIntances.interceptors.request.use(
   function (config) {
     // Do something before request is sent
     config.headers = {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      Authorization: `Bearer ${Cookies.get("token")}`,
     };
     return config;
   },
@@ -31,23 +31,9 @@ axiosApiIntances.interceptors.response.use(
     // Any status codes that falls outside the range of 2xx cause this function to trigger
     // Do something with response error
     if (error.response.status === 403) {
-      if (error.response.data.msg !== "jwt expired") {
-        localStorage.clear();
-        window.location.href = "/login";
-      } else {
-        const refreshToken = localStorage.getItem("refreshToken");
-        axiosApiIntances
-          .post("auth/refresh", { refreshToken })
-          .then((res) => {
-            localStorage.setItem("token", res.data.data.token);
-            localStorage.setItem("refreshToken", res.data.data.refreshToken);
-            window.location.reload();
-          })
-          .catch(() => {
-            localStorage.clear();
-            window.location.href = "/login";
-          });
-      }
+      localStorage.clear();
+      Cookie.remove("token");
+      window.location.href = "/login";
     }
     return Promise.reject(error);
   }

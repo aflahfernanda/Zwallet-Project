@@ -8,10 +8,11 @@ export default function ResetPassword() {
   const dispatch = useDispatch();
   const router = useRouter();
   const setId = router.query.id;
+  console.log(router.query.id);
   const [message, setMessage] = useState("");
   const [isError, setError] = useState(true);
   const [form, setForm] = useState({
-    keysChangePassword: setId,
+    keysChangePassword: router.query.id,
     newPassword: "",
     confirmPassword: "",
   });
@@ -23,8 +24,9 @@ export default function ResetPassword() {
       e.preventDefault();
       const resultPassword = await dispatch(updateForgotPassword(form));
       console.log(resultPassword);
-      setMessage((await resultPassword.payload).data.msg);
+      setMessage(resultPassword.action.payload.data.msg);
       setError(false);
+      router.push("/login");
       // setTimeout(() => {
       //   navigate("/");
       // }, 1000);

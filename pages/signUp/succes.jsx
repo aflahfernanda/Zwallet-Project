@@ -1,8 +1,10 @@
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { postRegister } from "../../stores/action/register";
 export default function SignUpSucces() {
+  const router = useRouter();
   const dispatch = useDispatch();
 
   return (
@@ -46,6 +48,9 @@ export default function SignUpSucces() {
               <button
                 type="button"
                 className="btn btn-primary btn-lg btn-block buttoncolor"
+                onClick={() => {
+                  router.push("/login");
+                }}
               >
                 Log In
               </button>

@@ -1,0 +1,115 @@
+.transtactionStatus {
+  text-align: center;
+}
+.transtactionStatus__userInfo {
+  border: solid gainsboro 1px;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 12px 12px 12px gainsboro;
+  margin-bottom: 20px;
+}
+.button__status {
+  margin-right: 10px;
+  height: 40px;
+  padding: 0 20px;
+  background-color: #6379f4;
+  border: none;
+  color: white;
+  border-radius: 12px;
+  font-weight: bold;
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .transtactionStatus {
+    text-align: center;
+  }
+  .transtactionStatus__userInfo {
+    border: solid gainsboro 1px;
+    padding: 5px;
+    border-radius: 12px;
+    box-shadow: 12px 12px 12px gainsboro;
+    margin-bottom: 20px;
+  }
+  .button__status {
+    margin-right: 5px;
+    height: 40px;
+    padding: 0 10px;
+    background-color: #6379f4;
+    border: none;
+    color: white;
+    border-radius: 12px;
+    font-weight: bold;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .transtactionStatus {
+    text-align: center;
+  }
+  .transtactionStatus__userInfo {
+    border: solid gainsboro 1px;
+    padding: 5px;
+    border-radius: 12px;
+    box-shadow: 12px 12px 12px gainsboro;
+    margin-bottom: 20px;
+    font-size: 10px;
+  }
+  .button__status {
+    margin-right: 5px;
+    height: 30px;
+    padding: 0 5px;
+    background-color: #6379f4;
+    border: none;
+    color: white;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 10px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .transtactionStatus {
+    text-align: center;
+  }
+  .transtactionStatus__userInfo {
+    border: solid gainsboro 1px;
+    padding: 3px;
+    border-radius: 12px;
+    box-shadow: 12px 12px 12px gainsboro;
+    margin-bottom: 20px;
+    font-size: 10px;
+  }
+  .button__status {
+    margin-right: 5px;
+    height: 30px;
+    padding: 0 5px;
+    background-color: #6379f4;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .transtactionStatus {
+    text-align: center;
+  }
+  .transtactionStatus__userInfo {
+    border: solid gainsboro 1px;
+    padding: 3px;
+    border-radius: 12px;
+    box-shadow: 12px 12px 12px gainsboro;
+    margin-bottom: 20px;
+    font-size: 10px;
+  }
+  .button__status {
+    margin-right: 5px;
+    height: 30px;
+    padding: 0 5px;
+    background-color: #6379f4;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 6px;
+  }
+}

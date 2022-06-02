@@ -26,16 +26,10 @@ export default function signup() {
       e.preventDefault();
       const resultRegister = await dispatch(postRegister(form));
       // console.log((await resultRegister.payload).data.data.id);
-      setUserId((await resultRegister.payload).data.data.id);
-      setMessage((await resultRegister.payload).data.msg);
+      setUserId(resultRegister.action.payload.data.data.id);
+      setMessage(resultRegister.action.payload.data.msg);
       setError(false);
-      router.push(
-        {
-          pathname: "/createPin",
-          query: { id: `${(await resultRegister.payload).data.data.id}` },
-        },
-        "/createPin"
-      );
+      router.push("/signUp/succes");
     } catch (error) {
       console.log(error.response);
       setError(true);
@@ -191,7 +185,21 @@ export default function signup() {
               >
                 Sign Up
               </button>
-              <p className="account">Already have an account? Lets Login</p>
+              <p className="account">
+                Already have an account?{" "}
+                <button
+                  onClick={() => {
+                    router.push("/login");
+                  }}
+                  style={{
+                    backgroundColor: "white",
+                    border: "none",
+                    color: "#6379F4",
+                  }}
+                >
+                  Lets Login
+                </button>
+              </p>
             </div>
           </div>
         </div>

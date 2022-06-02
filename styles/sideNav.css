@@ -1,19 +1,22 @@
 .backgroundNav {
   border: solid gainsboro 1px;
   border-radius: 12px;
-  padding: 30px;
+  padding: 40px;
   box-shadow: 10px 10px 10px gainsboro;
 }
 .dashboardNav {
-  display: inline;
-  margin-bottom: 300px;
+  /* display: inline; */
+  /* margin-bottom: 300px; */
+  padding: 5px;
 }
 .dashboardNav:hover {
   background-color: gainsboro;
+  cursor: pointer;
 }
 .transfer {
   margin-top: 40px;
   font-size: 20px;
+  padding: 5px;
 }
 .transfer:hover {
   background-color: gainsboro;
@@ -22,6 +25,7 @@
 .topUp {
   margin-top: 40px;
   font-size: 20px;
+  padding: 5px;
 }
 .topUp:hover {
   background-color: gainsboro;
@@ -30,6 +34,7 @@
 .profileNav {
   margin-top: 40px;
   font-size: 20px;
+  padding: 5px;
 }
 .profileNav:hover {
   background-color: gainsboro;
@@ -38,6 +43,7 @@
 .logOut {
   margin-top: 90px;
   font-size: 20px;
+  padding: 5px;
 }
 .logOut:hover {
   background-color: gainsboro;

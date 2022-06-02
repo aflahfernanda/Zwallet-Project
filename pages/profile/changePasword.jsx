@@ -5,6 +5,7 @@ import Nav from "../../components/nav";
 import SideNav from "../../components/sideNav";
 import TransferCard from "../../components/transferCard";
 import Footer from "../../components/footer";
+import Cookies from "js-cookie";
 
 export default function ChangePassword() {
   const dispatch = useDispatch();
@@ -15,9 +16,7 @@ export default function ChangePassword() {
   const user = useSelector((state) => state.user);
   const getdataUserId = async () => {
     try {
-      const dataUser = await dispatch(
-        getUserById(localStorage.getItem("userId"))
-      );
+      const dataUser = await dispatch(getUserById(Cookies.get("userId")));
       setUser(dataUser.action.payload.data.data);
       console.log(dataUser);
     } catch (error) {
@@ -40,7 +39,7 @@ export default function ChangePassword() {
       e.preventDefault();
       const resultPassword = await dispatch(updatePasswordUser(id, form));
       // console.log((await resultRegister.payload).data.data.id);
-      setMessage(await resultPassword.action.payload.data.msg);
+      setMessage(resultPassword.action.payload.data.msg);
       setError(false);
       console.log(resultPassword);
     } catch (error) {

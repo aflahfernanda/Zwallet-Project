@@ -17,7 +17,7 @@ export default function ForgotPassword() {
     try {
       e.preventDefault();
       const resultPassword = await dispatch(postForgotPassword(form));
-      setMessage((await resultPassword.payload).data.msg);
+      setMessage(resultPassword.action.payload.data.msg);
       setError(false);
       // setTimeout(() => {
       //   navigate("/");

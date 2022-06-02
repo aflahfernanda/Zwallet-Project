@@ -3,6 +3,7 @@
   border-radius: 8px;
   padding: 10px;
   font-size: 10px;
+  margin-bottom: 10px;
 }
 .historyCard__flex {
   display: flex;
@@ -18,8 +19,9 @@
 }
 .historyCard__profilePicture {
   width: 70px;
-
+  height: 80px;
   display: inline;
+  border-radius: 12px;
 }
 .historyCard__profileName {
   display: inline;
@@ -37,6 +39,14 @@
   box-shadow: 15px 15px 15px gainsboro;
   overflow-y: scroll;
   height: 500px;
+  padding: 10px;
+  border-radius: 12px;
+}
+.dashboardPage__transactionHistorys {
+  border: solid gainsboro 1px;
+  box-shadow: 15px 15px 15px gainsboro;
+
+  height: 540px;
   padding: 10px;
   border-radius: 12px;
 }

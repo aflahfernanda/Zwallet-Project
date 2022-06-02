@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { postRegister } from "../../stores/action/register";
+import { useRouter } from "next/router";
 export default function CreatePinSucces() {
+  const router = useRouter();
   const dispatch = useDispatch();
-
+  const handleLogin = () => {
+    router.push("/login");
+  };
   return (
     <div>
       <div className="row rowclass">
@@ -46,6 +50,7 @@ export default function CreatePinSucces() {
               <button
                 type="button"
                 className="btn btn-primary btn-lg btn-block buttoncolor"
+                onClick={handleLogin}
               >
                 Log In Now
               </button>

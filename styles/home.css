@@ -41,14 +41,51 @@
   border: solid gainsboro 1px;
   box-shadow: 12px 12px 12px gainsboro;
   padding: 10px 20px;
+  height: 350px;
 }
 .dashboardPage__info__historyStatusHeader {
 }
 .dashboardPage__info__historyStatus__viewAll {
   text-align: right;
 }
+.dashboardPage__info__historyStatus__viewAll:hover {
+  cursor: pointer;
+  color: #6379f4;
+}
 .status__responsive {
   display: none;
+}
+.history__scroll {
+  overflow-y: scroll;
+  height: 280px;
+}
+.button__paginationAllign {
+  text-align: center;
+  margin-top: 30px;
+  padding: 0 10px;
+}
+.button__pagination {
+  margin-left: 10px;
+  border: solid #6379f4;
+  background: #6379f4;
+  padding: 5px 20px;
+  border-radius: 12px;
+}
+.button__pagination:hover {
+  margin-left: 10px;
+  border: none;
+  background: #92a2ff;
+  padding: 5px 20px;
+  border-radius: 12px;
+}
+.sorting {
+  width: 190px;
+  text-align: center;
+  height: 30px;
+  margin-bottom: 20px;
+  border: none;
+  background-color: gainsboro;
+  border-radius: 12px;
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .dashboardPage {
@@ -107,6 +144,15 @@
   }
   .status__responsive {
     display: none;
+  }
+  .sorting {
+    width: 150px;
+    text-align: center;
+    height: 30px;
+    margin-bottom: 20px;
+    border: none;
+    background-color: gainsboro;
+    border-radius: 12px;
   }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -169,6 +215,15 @@
   .status__responsive {
     display: none;
   }
+  .sorting {
+    width: 100px;
+    text-align: center;
+    height: 30px;
+    margin-bottom: 20px;
+    border: none;
+    background-color: gainsboro;
+    border-radius: 12px;
+  }
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
   .dashboardPage {
@@ -230,6 +285,16 @@
   }
   .status__responsive {
     display: none;
+  }
+  .sorting {
+    width: 80px;
+    text-align: center;
+    height: 30px;
+    margin-bottom: 20px;
+    border: none;
+    background-color: gainsboro;
+    border-radius: 12px;
+    font-size: 10px;
   }
 }
 
@@ -296,5 +361,15 @@
   }
   .status__responsive {
     display: block;
+  }
+  .sorting {
+    width: 70px;
+    text-align: center;
+    height: 30px;
+    margin-bottom: 20px;
+    border: none;
+    background-color: gainsboro;
+    border-radius: 12px;
+    font-size: 10px;
   }
 }

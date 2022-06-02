@@ -66,6 +66,18 @@
   margin-bottom: 20px;
   text-align: center;
 }
+.pinRow {
+  margin-bottom: 100px;
+  padding: 0 1px;
+  text-align: center;
+  margin-left: 70px;
+}
+.pinBox {
+  width: 40px;
+  height: 50px;
+  border-radius: 8px;
+  margin-right: 20px;
+}
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .columnflex1 {
     background-color: #6379f4;
@@ -94,6 +106,18 @@
     margin-bottom: 20px;
     font-weight: bold;
     font-size: 20px;
+  }
+  .pinRow {
+    margin-bottom: 100px;
+    padding: 0 1px;
+    text-align: center;
+    margin-left: 30px;
+  }
+  .pinBox {
+    width: 40px;
+    height: 50px;
+    border-radius: 8px;
+    margin-right: 10px;
   }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -155,6 +179,18 @@
     margin-top: 20px;
     margin-bottom: 60px;
     font-size: 13px;
+  }
+  .pinRow {
+    margin-bottom: 100px;
+    padding: 0 1px;
+    text-align: center;
+    margin-left: 10px;
+  }
+  .pinBox {
+    width: 30px;
+    height: 40px;
+    border-radius: 8px;
+    margin-right: 10px;
   }
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -218,6 +254,18 @@
     margin-top: 20px;
     margin-bottom: 60px;
     font-size: 10px;
+  }
+  .pinRow {
+    margin-bottom: 100px;
+    padding: 0 1px;
+    text-align: center;
+    margin-left: 10px;
+  }
+  .pinBox {
+    width: 20px;
+    height: 40px;
+    border-radius: 8px;
+    margin-right: 10px;
   }
 }
 
@@ -287,5 +335,17 @@
     margin-top: 20px;
     margin-bottom: 60px;
     font-size: 10px;
+  }
+  .pinRow {
+    margin-bottom: 100px;
+    padding: 0 1px;
+    text-align: center;
+    margin-left: 10px;
+  }
+  .pinBox {
+    width: 20px;
+    height: 30px;
+    border-radius: 8px;
+    margin-right: 2px;
   }
 }

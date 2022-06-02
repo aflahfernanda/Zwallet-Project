@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUserById } from "../../stores/action/user";
 import Nav from "../../components/nav";
 import SideNav from "../../components/sideNav";
-
+import Cookies from "js-cookie";
 import Footer from "../../components/footer";
 import { useRouter } from "next/router";
 
@@ -17,9 +17,7 @@ export default function PersonalInformation() {
   const user = useSelector((state) => state.user);
   const getdataUserId = async () => {
     try {
-      const dataUser = await dispatch(
-        getUserById(localStorage.getItem("userId"))
-      );
+      const dataUser = await dispatch(getUserById(Cookies.get("userId")));
       setUser(dataUser.action.payload.data.data);
       console.log(dataUser);
     } catch (error) {

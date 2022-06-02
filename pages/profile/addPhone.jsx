@@ -5,7 +5,7 @@ import Nav from "../../components/nav";
 import SideNav from "../../components/sideNav";
 import TransferCard from "../../components/transferCard";
 import Footer from "../../components/footer";
-
+import Cookies from "js-cookie";
 export default function AddPhone() {
   const dispatch = useDispatch();
   const [users, setUser] = useState("");
@@ -15,9 +15,7 @@ export default function AddPhone() {
   const user = useSelector((state) => state.user);
   const getdataUserId = async () => {
     try {
-      const dataUser = await dispatch(
-        getUserById(localStorage.getItem("userId"))
-      );
+      const dataUser = await dispatch(getUserById(Cookies.get("userId")));
       setUser(dataUser.action.payload.data.data);
       console.log(dataUser);
     } catch (error) {
@@ -38,7 +36,7 @@ export default function AddPhone() {
       e.preventDefault();
       const resultPhone = await dispatch(updatePhoneUser(id, form));
       // console.log((await resultRegister.payload).data.data.id);
-      setMessage(await resultPhone.action.payload.data.msg);
+      setMessage(resultPhone.action.payload.data.msg);
       setError(false);
       console.log(resultPhone);
     } catch (error) {

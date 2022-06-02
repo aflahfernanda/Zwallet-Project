@@ -1,14 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserById, getCheckPinUser } from "../../stores/action/user";
+import Image from "next/image";
+
+import { useRouter } from "next/router";
+import { Button, Modal } from "react-bootstrap";
+import Cookies from "js-cookie";
 
 export default function Nav() {
+  const [account, setAccount] = useState([]);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    getUserId();
+  }, []);
+
+  const getUserId = async () => {
+    try {
+      const dataUser = await dispatch(getUserById(Cookies.get("userId")));
+      setAccount(dataUser.action.payload.data.data);
+      console.log(dataUser);
+    } catch (error) {
+      console.log(error.response);
+    }
+  };
+
   return (
     <div>
       <nav className=" sticky navbar navbar-light bg-light navDesign justify-content-between">
         <div className="container">
           <a className="navbar-brand" href="#">
-            <img
+            <Image
               src="/Zwallet nav.png"
-              width="100px"
+              width={"100px"}
+              height={"30px"}
               className="d-inline-block align-top"
               alt="logo"
             />
@@ -17,15 +41,20 @@ export default function Nav() {
             <div className="row">
               <div className="col-sm">
                 <img
-                  src="/default-avatar-profile-vector-user-profile-default-avatar-profile-vector-user-profile-profile-179376714.jpg"
-                  alt="profileImage"
-                  width="50px"
-                  className="profilePhoto"
+                  src={
+                    account.image
+                      ? `https://res.cloudinary.com/dd1uwz8eu/image/upload/v1653276449/${account.image}`
+                      : "/default-avatar-profile-vector-user-profile-default-avatar-profile-vector-user-profile-profile-179376714.jpg"
+                  }
+                  alt="profile"
+                  className="historyCard__profilePicture"
                 />
               </div>
               <div className="col-sm">
-                <p className="nameProfile">Robert Chandler</p>
-                <p className="phoneNumber">+62 8139 3877 7946</p>
+                <p className="nameProfile">
+                  {account.firstName + " " + account.lastName}
+                </p>
+                <p className="phoneNumber">{account.noTelp}</p>
               </div>
               <div className="col-sm">
                 <svg
